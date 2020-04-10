@@ -1,4 +1,4 @@
-package com.example.internalstorage;
+package com.example.internalstorage.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.internalstorage.R;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -34,24 +36,9 @@ public class MainActivity extends AppCompatActivity {
         readbtn = findViewById(R.id.readbtn);
         writebtn = findViewById(R.id.writebtn);
 
-        readbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                readData();
-            }
-        });
+        readbtn.setOnClickListener(v -> readData());
 
-        writebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                writeData();
-            }
-        });
-
-
-//         writeData();
-//         readData();
-
+        writebtn.setOnClickListener(v -> writeData());
 
 
     }
@@ -68,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 line = br.readLine();
             }
             String content = sb.toString();
-            this.value.setText(content);
-            Toast.makeText(this, "Data Read Successfully", Toast.LENGTH_SHORT).show();
+            //this.value.setText(content);
+            Toast.makeText(this, content, Toast.LENGTH_LONG).show();
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activities.MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Internal Storage"
+        android:text="Data Saving using Custom Widgets"
         android:textSize="25sp"
         android:textColor="@color/colorPrimaryDark"
         android:fontFamily="@font/overpass_semibold"
@@ -18,7 +18,7 @@
         android:layout_marginLeft="10dp"
         android:id="@+id/label"/>
 
-    <EditText
+    <com.example.internalstorage.CustomWidgets.ClearEditText
         android:id="@+id/value"
         android:background="@drawable/button_bg"
         android:layout_width="match_parent"
@@ -34,31 +34,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         >
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Read Data"
-            android:background="@drawable/button_bg"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:textAllCaps="false"
-            android:fontFamily="@font/overpass_semibold"
-            android:id="@+id/readbtn"/>
-        <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Write Data"
             android:layout_marginLeft="5dp"
             android:textColor="@color/colorPrimaryDark"
             android:background="@drawable/button_bg"
             android:fontFamily="@font/overpass_semibold"
-            android:layout_weight="1"
             android:layout_marginRight="5dp"
             android:textAllCaps="false"
             android:id="@+id/writebtn"/>
+
+
+        <com.example.internalstorage.CustomWidgets.HoverButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toast Data"
+            android:background="@drawable/button_bg"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAllCaps="false"
+            android:fontFamily="@font/overpass_semibold"
+            android:id="@+id/readbtn"/>
     </LinearLayout>
 
 </LinearLayout>
